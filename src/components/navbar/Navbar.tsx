@@ -78,7 +78,6 @@ session.status=='authenticated'&&
   <DropdownMenuContent align="end">
     <DropdownMenuLabel>My Account</DropdownMenuLabel>
     <DropdownMenuSeparator />
-    <Link href='./profile'><DropdownMenuItem>Your Orders</DropdownMenuItem></Link>
     {
       session.status!='authenticated'?<>
       <Link href={'/login'}>

@@ -17,8 +17,10 @@ import { useContext, useRef, useState } from "react"
 import { CartContext } from "./context/CartContext"
 import { Loader } from "lucide-react"
 import Spinner from "./Spinner"
-export function PaymentDialog({cartId}) {
+import toast from "react-hot-toast"
+export function PaymentDialog({cartId}:{cartId:string}) {
     const [isLoading,setIsLoading]=useState(false)
+    const [isLoadingCash,setIsLoadingCash]=useState(false)
     const userDetails= useRef <HTMLInputElement|null>(null)
     const userPhone=useRef <HTMLInputElement|null>(null)
     const userCity=useRef <HTMLInputElement|null>(null)
@@ -40,6 +42,28 @@ export function PaymentDialog({cartId}) {
     setIsLoading(false)
     if(data.status=='success'){
         window.location.href=data.session.url
+    }
+ }
+   async function cashOrder(){
+    setIsLoadingCash(true)
+    console.log(cartId);
+    const shippingAddress={details:userDetails.current?.value,phone:userPhone.current?.value,city:userCity.current?.value}
+    const res=await fetch(`https://ecommerce.routemisr.com/api/v1/orders/${cartId}`,{
+    method:'POST',
+    body:JSON.stringify({shippingAddress}),
+    headers:{
+        token:userToken,
+        'content-type':'application/json',
+    }
+    })
+    const data=await res.json()
+    console.log(data);
+    setIsLoadingCash(false)
+    if(data.status=='success'){
+       toast.success('Cash payment completed successfully! Thank you for your purchase',{duration:10000})
+    }
+    else{
+       toast.error("Can't do an order cash for this cart",{duration:5000})
     }
  }
   return (
@@ -76,7 +100,7 @@ export function PaymentDialog({cartId}) {
               <Button variant="outline">Cancel</Button>
             </DialogClose>
             <Button type="submit" onClick={checkoutSession} disabled={isLoading}>{isLoading?<Spinner/>:"Visa"}</Button>
-            <Button type="submit">Cash</Button>
+            <Button type="submit" onClick={cashOrder}disabled={isLoadingCash}>{isLoadingCash?<Spinner/>:"Cash"} </Button>
           </DialogFooter>
         </DialogContent>
       </form>
