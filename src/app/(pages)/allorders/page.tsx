@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext, useEffect, useState } from "react";
-import { OrderI } from "@/interfaces";
+import { faildOrderI, OrderI } from "@/interfaces";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -27,10 +27,10 @@ export default function Orders() {
   }
 useEffect(() => {
   const fetchOrders = async () => {
-    const data: OrderI = await getAllOders();
-    if(data?.statusMsg=='fail'){
-      setError(true)
-    }
+    const data: OrderI|faildOrderI = await getAllOders();
+if ('statusMsg' in data && data.statusMsg === 'fail') {
+  setError(true);
+}
     else{
       setOrders(data);
       setError(false)

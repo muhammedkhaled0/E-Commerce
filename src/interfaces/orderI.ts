@@ -25,3 +25,7 @@ export interface OrderI {
     price: number;
   }[];
 }
+export interface faildOrderI{
+    statusMsg:string,
+    message:string
+}
