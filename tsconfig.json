@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "src/components/Cart.jsx", "src/components/getAllOrdersApi.ts"  ],
+, "src/components/Cart.jsx", "src/components/getAllOrdersApi.ts", "src/app/(pages)/allorders/page.jsx"  ],
   "exclude": ["node_modules"]
 }
