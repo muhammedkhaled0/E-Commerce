@@ -29,7 +29,7 @@ export function PaymentDialog({cartId}:{cartId:string}) {
     setIsLoading(true)
     console.log(cartId);
     const shippingAddress={details:userDetails.current?.value,phone:userPhone.current?.value,city:userCity.current?.value}
-    const res=await fetch(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=http://localhost:3000`,{
+    const res=await fetch(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${process.env.NEXTAUTH_URL}`,{
     method:'POST',
     body:JSON.stringify({shippingAddress}),
     headers:{

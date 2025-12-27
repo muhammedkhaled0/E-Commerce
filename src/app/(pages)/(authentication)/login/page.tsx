@@ -49,7 +49,6 @@ export default function Login() {
     setIsLoading(false);
   }
   return (
-    <>
 <Card className="min-h-[75vh] w-full max-w-md mx-auto flex items-center justify-center flex-col p-6 shadow-lg rounded-xl my-15 border">
   <div className="flex items-center justify-center flex-col w-full">
     <h1 className="font-bold text-3xl mb-6 text-center">Login Now</h1>
@@ -91,7 +90,5 @@ export default function Login() {
     </Form>
   </div>
 </Card>
-
-    </>
   )
 }
