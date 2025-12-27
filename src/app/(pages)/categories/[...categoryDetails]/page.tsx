@@ -7,9 +7,9 @@ import { Params } from 'next/dist/server/request/params'
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
-
-export default async function page({ params }: { params:Params[]}) {
-    const { categoryDetails }:{categoryDetails:string[]} =await params;
+export default async function page({ params }: any) {
+    const resolvedParams = await params;
+    const { categoryDetails } = resolvedParams;
     console.log(categoryDetails);
     const res=await fetch("https://ecommerce.routemisr.com/api/v1/products")
     const data=await res.json()
