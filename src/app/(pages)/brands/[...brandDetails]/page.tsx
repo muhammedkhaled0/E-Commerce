@@ -8,8 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
-export default async function page({ params }: { params: { brandDetails: string[] } }) {
-    const { brandDetails } = params;
+export default async function page({ params }: { params:Params[]}) {
+    const { brandDetails }:{brandDetails:string[]} =await params;
     console.log(brandDetails);
     const res=await fetch("https://ecommerce.routemisr.com/api/v1/products")
     const data=await res.json()

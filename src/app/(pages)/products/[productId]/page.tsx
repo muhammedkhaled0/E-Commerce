@@ -18,7 +18,7 @@ import Image from "next/image";
 import React, { ReactNode } from 'react'
 
 export default async function page({params}:{params:Params}) {
-    const {productId}=await params
+    const {productId}:{productId:string}=await params
     const res=await fetch('https://ecommerce.routemisr.com/api/v1/products/'+productId)
     const {data:product}:{data:ProductI}=await res.json()
     console.log(product);
@@ -51,7 +51,9 @@ export default async function page({params}:{params:Params}) {
             </div>
         </CardContent>
   <CardFooter className="md:mt-10">
-    <AddToCard productId={productId}/>
+    {
+      productId?<AddToCard productId={productId}/>:''
+    }
     <HeartIcon/>
   </CardFooter>
         </div>
