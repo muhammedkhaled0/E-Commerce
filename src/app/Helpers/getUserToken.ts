@@ -3,5 +3,5 @@ import { decode } from 'next-auth/jwt'
 export async function getUserToken(){
   const x=(await cookies()).get('next-auth.session-token')?.value
   const accessToken=await decode({token:x,secret:process.env.NEXTAUTH_SECRET!})
-  return accessToken?.token
+  return accessToken?.token as string
 }
