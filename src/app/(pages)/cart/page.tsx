@@ -73,13 +73,12 @@ export default function cart() {
           <p>Total</p>
           <p>{totalPrice||cartData?.data.totalCartPrice} EGP</p>
         </div>
-        <PaymentDialog cartId={cartData.cartId}/>
+        <PaymentDialog cartId={cartData.cartId} cartOwner={cartData.data.cartOwner}/>
         <Link href={'/products'}>
         <button className="w-full border py-3 rounded-xl font-medium hover:bg-accent-foreground hover:text-accent transition-all duration-500 cursor-pointer">
           Continue Shopping
         </button>  
         </Link>
-
 <Dialog>
         <DialogTrigger asChild>
                 <button className="flex items-center justify-center gap-2 mt-3 cursor-pointer text-red-500 font-medium w-full border-red-500 border py-3 rounded-2xl hover:bg-red-500 hover:text-white transition-all duration-500" 

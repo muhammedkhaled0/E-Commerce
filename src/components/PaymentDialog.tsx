@@ -18,7 +18,7 @@ import { CartContext } from "./context/CartContext"
 import { Loader } from "lucide-react"
 import Spinner from "./Spinner"
 import toast from "react-hot-toast"
-export function PaymentDialog({cartId}:{cartId:string}) {
+export function PaymentDialog({cartId,cartOwner}:{cartId:string,cartOwner:string}) {
     const [isLoading,setIsLoading]=useState(false)
     const [isLoadingCash,setIsLoadingCash]=useState(false)
     const userDetails= useRef <HTMLInputElement|null>(null)
@@ -41,6 +41,7 @@ export function PaymentDialog({cartId}:{cartId:string}) {
     console.log(data);
     setIsLoading(false)
     if(data.status=='success'){
+      localStorage.setItem('ownerId',cartOwner)
         window.location.href=data.session.url
     }
  }
@@ -61,6 +62,7 @@ export function PaymentDialog({cartId}:{cartId:string}) {
     setIsLoadingCash(false)
     if(data.status=='success'){
        toast.success('Cash payment completed successfully! Thank you for your purchase',{duration:10000})
+      localStorage.setItem('ownerId',cartOwner)
     }
     else{
        toast.error("Can't do an order cash for this cart",{duration:5000})

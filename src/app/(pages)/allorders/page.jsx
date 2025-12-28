@@ -14,10 +14,11 @@ export default function Orders() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  console.log(cartData);
+  
   async function getAllOders(){
     try{
-
-      const res=await fetch('https://ecommerce.routemisr.com/api/v1/orders/user/'+cartData?.data.cartOwner)
+      const res=await fetch('https://ecommerce.routemisr.com/api/v1/orders/user/'+cartData?.data.cartOwner||localStorage.getItem('ownerId'))
       const data=await res.json()
       return data
     }
