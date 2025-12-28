@@ -42,6 +42,7 @@ export function CartContextProvider({children}:{children:ReactNode}){
             setContextLoading(false)
             const data:CartI=await res.json()
             setCartData(data)
+         localStorage.setItem('ownerId',data?.data.cartOwner)
         }
         catch(error){
             console.log(error);
