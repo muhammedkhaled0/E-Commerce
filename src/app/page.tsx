@@ -2,13 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/navigation'
-
+import { useRouter } from 'next/navigation';
 export default function HomePage() {
   const router = useRouter()
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-white text-black px-4">
+    <main className="min-h-screen flex items-center justify-center  dark:bg-[oklch(0.16_0.04_255)]   text-accent-foreground px-4 ]
+">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ export default function HomePage() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold tracking-tight"
         >
-          Welcome to <span className="text-black">ShopMart</span>
+          Welcome to <span>ShopMart</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
@@ -40,7 +40,7 @@ export default function HomePage() {
         >
           <Button
             onClick={() => router.push('/products')}
-            className="px-8 py-6 text-base bg-black text-white hover:bg-gray-900 transition"
+            className="cursor-pointer px-8 py-6 text-base bg-black text-white hover:bg-gray-900 dark:text-accent-foreground dark:bg-accent transition"
           >
             Explore Products
           </Button>

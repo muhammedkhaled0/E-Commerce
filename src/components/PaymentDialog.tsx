@@ -72,9 +72,27 @@ export function PaymentDialog({cartId,cartOwner}:{cartId:string,cartOwner:string
     <Dialog>
       <form>
         <DialogTrigger asChild>
-                <button className="w-full bg-black text-white py-3 rounded-xl font-medium hover:bg-accent hover:text-accent-foreground transition-all duration-500 cursor-pointer">
-          Proceed to Checkout
-        </button>
+<button className="
+  w-full 
+  bg-black 
+  text-white 
+  py-3 
+  rounded-xl 
+  font-medium 
+  transition-all 
+  duration-500 
+  cursor-pointer 
+
+  dark:bg-white 
+  dark:text-black 
+  hover:bg-accent 
+  hover:text-accent-foreground 
+  dark:hover:bg-[var(--accent)] 
+  dark:hover:text-[var(--accent-foreground)]
+">
+  Proceed to Checkout
+</button>
+
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>

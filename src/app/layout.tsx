@@ -22,14 +22,13 @@ export const metadata: Metadata = {
   title: "ShopMart",
   description: "E-commerce is an online platform that enables businesses to showcase, sell, and manage products or services through the internet. It allows customers to browse items, compare prices, add products to a cart, and complete secure payments anytime and from anywhere. The system typically includes features such as product management, user authentication, order tracking, payment integration, and customer support, providing a fast, convenient, and scalable shopping experience for both sellers and buyers.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-            // <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -48,6 +47,6 @@ export default function RootLayout({
           }
       </body>
     </html>
-    // </ThemeProvider>
+     </ThemeProvider>
   );
 }
