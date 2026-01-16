@@ -50,24 +50,24 @@ export default function Navbar() {
   <NavigationMenuList>
        <NavigationMenuItem>
       <NavigationMenuLink asChild>
-        <Link href='/products' className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100'>Products</Link>
+        <Link href='/products' className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100 dark:focus:text-accent dark:hover:bg-accent-foreground dark:hover:text-accent'>Products</Link>
       </NavigationMenuLink>
     </NavigationMenuItem>
            <NavigationMenuItem>
       <NavigationMenuLink asChild>
-        <Link href='/brands' className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100'>Brands</Link>
+        <Link href='/brands' className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100 dark:focus:text-accent dark:hover:bg-accent-foreground dark:hover:text-accent'>Brands</Link>
       </NavigationMenuLink>
     </NavigationMenuItem>
     <NavigationMenuItem>
       <NavigationMenuLink asChild>
-        <Link href='/categories' className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100'>Categories</Link>
+        <Link href='/categories' className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100 dark:focus:text-accent dark:hover:bg-accent-foreground dark:hover:text-accent'>Categories</Link>
       </NavigationMenuLink>
     </NavigationMenuItem>
 {
 session.status=='authenticated'&&
     <NavigationMenuItem>
       <NavigationMenuLink asChild>
-        <Link href='/allorders' className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100'>All orders</Link>
+        <Link href='/allorders' className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100 dark:focus:text-accent dark:hover:bg-accent-foreground dark:hover:text-accent'>All orders</Link>
       </NavigationMenuLink>
     </NavigationMenuItem>
         }
@@ -149,22 +149,20 @@ session.status=='authenticated'&&
                 <div className="flex flex-col gap-2">
                   <Link 
                     href='/products' 
-                    className='font-semibold px-4 py-2 rounded-md transition-colors hover:bg-accent-foreground hover:text-gray-100'
+               className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100 dark:focus:text-accent dark:hover:bg-accent-foreground dark:hover:text-accent'
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Products
                   </Link>
                   <Link 
                     href='/brands' 
-                    className='font-semibold px-4 py-2 rounded-md transition-colors hover:bg-accent-foreground hover:text-gray-100'
-                    onClick={() => setMobileMenuOpen(false)}
+className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100 dark:focus:text-accent dark:hover:bg-accent-foreground dark:hover:text-accent'                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Brands
                   </Link>
                   <Link 
                     href='/categories' 
-                    className='font-semibold px-4 py-2 rounded-md transition-colors hover:bg-accent-foreground hover:text-gray-100'
-                    onClick={() => setMobileMenuOpen(false)}
+className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100 dark:focus:text-accent dark:hover:bg-accent-foreground dark:hover:text-accent'                    onClick={() => setMobileMenuOpen(false)}
                   >
                     Categories
                   </Link>
@@ -172,8 +170,7 @@ session.status=='authenticated'&&
 session.status=='authenticated'&&
                   <Link 
                     href='/allorders' 
-                    className='font-semibold px-4 py-2 rounded-md transition-colors hover:bg-accent-foreground hover:text-gray-100'
-                    onClick={() => setMobileMenuOpen(false)}
+className='font-semibold px-4 py-2 rounded-md transition-colors focus:bg-accent-foreground focus:text-gray-100 hover:bg-accent-foreground hover:text-gray-100 dark:focus:text-accent dark:hover:bg-accent-foreground dark:hover:text-accent'                    onClick={() => setMobileMenuOpen(false)}
                   >
                     All orders
                   </Link>
