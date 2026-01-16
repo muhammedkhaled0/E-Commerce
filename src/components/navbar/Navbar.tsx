@@ -74,14 +74,8 @@ session.status=='authenticated'&&
 
   </NavigationMenuList>
             </NavigationMenu>
-            <div className="flex items-center gap-4 relative">
+            <div className="flex items-center gap-3 relative">
             {/* Mobile Menu Toggle */}
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden hover:opacity-70 transition-opacity"
-            >
-              {mobileMenuOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-            </button>
 <label className="relative inline-flex items-center cursor-pointer">
   <input 
     type="checkbox" 
@@ -93,7 +87,7 @@ session.status=='authenticated'&&
       localStorage.setItem("theme", newTheme);
     }}
   />
-  <div className="w-13 h-8 rounded-full ring-0 duration-500 outline-none bg-gray-200 overflow-hidden
+  <div className="w-12 h-8 rounded-full ring-0 duration-500 outline-none bg-gray-200 overflow-hidden
     before:flex before:items-center before:justify-center before:content-['☀️']
     before:absolute before:h-5 before:w-5 before:top-1/2 before:bg-white before:rounded-full before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700
     peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full shadow-lg shadow-gray-400 peer-checked:shadow-lg peer-checked:shadow-gray-700 peer-checked:bg-[oklch(0.16_0.04_255)]
@@ -139,6 +133,12 @@ session.status=='authenticated'&&
         </Badge>
         </Link>
         }
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden hover:opacity-70 transition-opacity"
+            >
+              {mobileMenuOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+            </button>
 
 </div>
             </div>
